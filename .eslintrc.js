@@ -33,6 +33,7 @@ module.exports = {
     },
   },
   rules: {
-    'react/no-unknown-property': [2, { ignore: ['jsx'] }]
+    'react/no-unknown-property': [2, { ignore: ['jsx'] }],
+    "import/no-unresolved": ["error", { "ignore": ["^@/"] }]
   },
 };
