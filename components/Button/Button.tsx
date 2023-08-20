@@ -1,53 +1,63 @@
-"use client"
+import React from 'react';
+import './button.scss';
 
-import React from 'react'
-import './button.scss'
-
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean
+  buttonType?: 'primary' | 'outline';
   /**
    * What background color to use
    */
-  backgroundColor?: string
+  backgroundColor?: string;
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
-  label: string
+  label?: string;
+  /**
+   * Optional icon element to be displayed before the label
+   */
+  icon?: React.ReactElement;
   /**
    * Optional click handler
    */
-  onClick?: () => void
+  onClick?: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  buttonType = 'primary',
   size = 'medium',
   label,
+  icon,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
+  let buttonClass
+
+  switch (buttonType) {
+    case 'primary':
+      buttonClass = 'bg-highlight-500 text-default-200 border-highlight-600 hover:bg-highlight-200 hover:text-default-700 hover:border-highlight-200'
+      break
+    case 'outline':
+      buttonClass = 'border-default-200'
+  }
 
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
+      className={['rounded-full border-2 transition-all duration-500', `storybook-button--${size}`, buttonClass].join(
         ' '
       )}
       {...props}
     >
-      {label}
+      {icon && <span className="button-icon">{icon}</span>}
+      {label && label}
     </button>
-  )
-}
+  );
+};

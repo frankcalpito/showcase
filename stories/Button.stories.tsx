@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from '../components/Button/Button'
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
   component: Button,
@@ -12,35 +11,33 @@ const meta: Meta<typeof Button> = {
       control: 'color',
     },
   },
+  parameters:{
+    controls:{
+      exclude:/styles/gi
+    }
+  }
 }
 
 export default meta
 type Story = StoryObj<typeof Button>
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-}
-
-export const Secondary: Story = {
+export const Default: Story = {
   args: {
     label: 'Button',
   },
 }
 
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-}
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const ButtonStyles: Story = {
+  render: () => (
+    <div className="grid grid-cols-4 gap-4 items-center sm:px-8">
+      <p className='font-extralight font-mono leading-3 text-center'>Primary</p>
+      <Button label='primary - small' size='small' />
+      <Button label='default' />
+      <Button label='primary - large' size='large' />
+      <p className='font-extralight font-mono leading-3 text-center'>Outline</p>
+      <Button label='primary - small' size='small' buttonType='outline' />
+      <Button label='default' buttonType='outline' />
+      <Button label='primary - large' size='large' buttonType='outline' />
+    </div>
+  )
 }

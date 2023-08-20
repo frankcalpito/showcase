@@ -106,11 +106,11 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    @apply bg-gray-900;
+    @apply bg-default-900;
     color-scheme: dark;
   }
 
   .docs-story {
-    @apply bg-gray-900;
+    @apply bg-default-900;
   }
 }

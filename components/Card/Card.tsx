@@ -53,7 +53,7 @@ export const Card = ({
       onClick={handleClick}
       className={[
           'bg-white rounded-lg shadow-md cursor-pointer text-black',
-          !disableEffects ? 'transition-transform duration-200 ease-in-out transform hover:-translate-y-1' : null,
+          !disableEffects ? 'transition-transform duration-200 ease-in-out transform hover:-trandefault-y-1' : null,
           className
         ].join(' ')}
       {...props}

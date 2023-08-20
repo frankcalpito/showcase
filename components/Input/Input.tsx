@@ -86,9 +86,9 @@ export const Input = ({
             className={[
               `text-sm transition-all -z-10 origin-[0] duration-300`,
               labelStyle === 'float' ? 
-                isFocused || inputValue ? 'absolute -translate-y-6 scale-75 top-3' : 'absolute top-1/2 -translate-y-1/2 scale-100' 
+                isFocused || inputValue ? 'absolute -trandefault-y-6 scale-75 top-3' : 'absolute top-1/2 -trandefault-y-1/2 scale-100' 
                 : null,
-              isFocused && !inputValue ? 'text-blue-600 dark:text-blue-500' : 'text-gray-500 dark:text-gray-400',
+              isFocused && !inputValue ? 'text-highlight-600 dark:text-highlight-500' : 'text-default-500 dark:text-default-400',
               labelClass
             ].join(' ')}
           >
@@ -99,8 +99,8 @@ export const Input = ({
       <input
         type="text"
         className={[
-          `block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none peer outline-none ring-0 dark:text-white`,
-          isFocused && !inputValue ? `dark:border-blue-500 border-blue-600` : `border-gray-300 dark:border-gray-600`,
+          `block py-2.5 px-0 w-full text-sm text-default-900 bg-transparent border-0 border-b-2 appearance-none peer outline-none ring-0 dark:text-white`,
+          isFocused && !inputValue ? `dark:border-highlight-500 border-highlight-600` : `border-default-300 dark:border-default-600`,
           inputClass
         ].join(' ')}
         value={inputValue}

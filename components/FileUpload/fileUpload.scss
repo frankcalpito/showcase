@@ -1,0 +1,26 @@
+.file-upload-wrapper {
+
+  &.error .upload-button {
+    @apply border-2 border-error-400;
+  }
+
+  .label {
+    @apply text-default-800 font-light mr-2 flex items-center text-sm; 
+
+    &.p-top {
+      @apply block;
+    }
+  }
+
+  input {
+    @apply border-default-500 text-default-800 rounded-sm bg-transparent;
+  }
+
+  .hint-text {
+    @apply text-default-800 font-light pr-2;
+  }
+
+  .error-text{
+    @apply text-error-400 ml-2 flex items-center;
+  }
+}
