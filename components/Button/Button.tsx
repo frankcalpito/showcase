@@ -36,6 +36,7 @@ export const Button = ({
   size = 'medium',
   label,
   icon,
+  className,
   ...props
 }: ButtonProps) => {
   let buttonClass
@@ -51,7 +52,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['rounded-full border-2 transition-all duration-500', `storybook-button--${size}`, buttonClass].join(
+      className={['rounded-full border-2 transition-all duration-500 disabled:!bg-gray-500 disabled:border-none disabled:!text-default-100', `storybook-button--${size}`, buttonClass, className].join(
         ' '
       )}
       {...props}

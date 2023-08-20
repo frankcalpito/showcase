@@ -89,7 +89,7 @@ export const FileUpload = function ({
       <input data-testid={id} ref={fileUploadRef} id={id} type="file" name={name || id} multiple accept='image/*' className="hidden" onChange={handleFileEvent} {...props} />
       <div className="w-full flex items-center py-3">
         {label && <label>{label}</label>}
-        <Button label="Choose file" className="upload-button flex-0 w-1/2" onClick={() => fileUploadRef && fileUploadRef.current?.click()} disabled={isDisabled} />
+        <Button label="Choose file" className="upload-button flex-0 w-auto ml-4" onClick={() => fileUploadRef && fileUploadRef.current?.click()} disabled={isDisabled} />
         {errorText && <div className="error-text">{errorText}</div>}
       </div>
       <div className="mt-4 w-full grid grid-cols-1 gap-y-1 overflow-y-scroll pr-4 custom-scrollbar">
@@ -99,7 +99,7 @@ export const FileUpload = function ({
             <label>
               {file.name}
             </label>
-            <Button data-testid={`remove-file-${i}`} onClick={() => handleRemoveFile(file)} />
+            <Button className="!p-0 w-9 h-9 items-center flex justify-center" data-testid={`remove-file-${i}`} onClick={() => handleRemoveFile(file)} icon={<>x</>} />
           </div>
         ))}
       </div>

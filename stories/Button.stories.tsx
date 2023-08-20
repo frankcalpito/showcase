@@ -39,5 +39,10 @@ export const ButtonStyles: Story = {
       <Button label='default' buttonType='outline' />
       <Button label='primary - large' size='large' buttonType='outline' />
     </div>
-  )
+  ),
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  }
 }

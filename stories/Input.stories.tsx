@@ -8,6 +8,11 @@ const meta: Meta<typeof Input> = {
   tags: ['autodocs'],
   argTypes: {
   },
+  parameters:{
+    controls:{
+      exclude:/styles/gi
+    }
+  }
 }
 
 export default meta
@@ -19,13 +24,17 @@ export const Default: Story = {
   },
 }
 
-export const LabelStyles: Story = {
-  name: 'Label Styles',
+export const InputStyles: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-4 items-center">
       <Input label='floating' />
       <Input label='side' labelStyle='side' />
       <Input label='top' labelStyle='top' />
     </div>
-  )
+  ),
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  }
 }

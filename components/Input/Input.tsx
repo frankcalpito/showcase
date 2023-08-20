@@ -86,7 +86,7 @@ export const Input = ({
             className={[
               `text-sm transition-all -z-10 origin-[0] duration-300`,
               labelStyle === 'float' ? 
-                isFocused || inputValue ? 'absolute -trandefault-y-6 scale-75 top-3' : 'absolute top-1/2 -trandefault-y-1/2 scale-100' 
+                isFocused || inputValue ? 'absolute -translate-y-6 scale-75 top-3' : 'absolute top-1/2 -translate-y-1/2 scale-100' 
                 : null,
               isFocused && !inputValue ? 'text-highlight-600 dark:text-highlight-500' : 'text-default-500 dark:text-default-400',
               labelClass
