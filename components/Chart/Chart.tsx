@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 
 export interface ChartProps {
   label?: string;
-  onClick?: string;
+  onClick?: Function;
   className?: string;
   data?: ChartData;
   type?: ChartType

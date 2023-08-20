@@ -87,5 +87,10 @@ export const Variations: Story = {
         </Card>
       </div>
     )
+  },
+  parameters: {
+    options: {
+      showPanel: false,
+    },
   }
 }
