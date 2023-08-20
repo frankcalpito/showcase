@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 /**
  * Props for the Card component.
@@ -40,28 +40,28 @@ export const Card = ({
 }: CardProps) => {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!disableEffects && onClick) {
-      e.preventDefault();
-      onClick(e);
+      e.preventDefault()
+      onClick(e)
     }
-  };
+  }
 
-  const bgImage = imgSrc ? { backgroundImage: `url(${imgSrc})` } : undefined;
+  const bgImage = imgSrc ? { backgroundImage: `url(${imgSrc})` } : undefined
 
   return (
     <div
       data-testid="card"
       onClick={handleClick}
       className={[
-          'bg-white rounded-lg shadow-md cursor-pointer text-black',
-          !disableEffects ? 'transition-transform duration-200 ease-in-out transform hover:-translate-y-1' : null,
+          "bg-white rounded-lg shadow-md cursor-pointer text-black",
+          !disableEffects ? "transition-transform duration-200 ease-in-out transform hover:-translate-y-1" : null,
           className
-        ].join(' ')}
+        ].join(" ")}
       {...props}
     >
       {imgSrc && (
         <div
           className={`relative w-full h-40 rounded-lg bg-cover bg-center ${
-            imgCaption ? 'bg-opacity-70' : ''
+            imgCaption ? "bg-opacity-70" : ""
           }`}
           style={bgImage}
         >
@@ -74,5 +74,5 @@ export const Card = ({
       )}
       {children}
     </div>
-  );
-};
+  )
+}

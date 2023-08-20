@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from "@storybook/react"
 
-import { Input } from '../components/Input/Input'
+import { Input } from "../components/Input/Input"
 
 const meta: Meta<typeof Input> = {
-  title: 'Atoms/Input',
+  title: "Atoms/Input",
   component: Input,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
   },
   parameters:{
@@ -20,16 +20,16 @@ type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
   args: {
-    label: 'Input'
+    label: "Input"
   },
 }
 
 export const InputStyles: Story = {
   render: () => (
     <div className="grid grid-cols-3 gap-4 items-center">
-      <Input label='floating' />
-      <Input label='side' labelStyle='side' />
-      <Input label='top' labelStyle='top' />
+      <Input label="floating" />
+      <Input label="side" labelStyle="side" />
+      <Input label="top" labelStyle="top" />
     </div>
   ),
   parameters: {

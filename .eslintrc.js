@@ -35,9 +35,12 @@ module.exports = {
   rules: {
     'react/no-unknown-property': [2, { ignore: ['jsx'] }],
     "import/no-unresolved": ["error", { "ignore": ["^@/"] }],
-    
+    "react/react-in-jsx-scope": "off",
     // Disallow semicolons
     "semi": ["error", "never"],
-    "semi-spacing": ["error", {"before": false, "after": true}]
+    "semi-spacing": ["error", {"before": false, "after": true}],
+    "quotes": ["error", "double"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "@typescript-eslint/no-explicit-any": "off"
   },
 };

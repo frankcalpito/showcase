@@ -1,11 +1,11 @@
-import React from 'react';
-import './button.scss';
+import React from "react"
+import "./button.scss"
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Is this the principal call to action on the page?
    */
-  buttonType?: 'primary' | 'outline';
+  buttonType?: "primary" | "outline";
   /**
    * What background color to use
    */
@@ -13,7 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   /**
    * Button contents
    */
@@ -32,33 +32,35 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  buttonType = 'primary',
-  size = 'medium',
+  buttonType = "primary",
+  size = "medium",
   label,
   icon,
   className,
+  children,
   ...props
 }: ButtonProps) => {
   let buttonClass
 
   switch (buttonType) {
-    case 'primary':
-      buttonClass = 'bg-highlight-500 text-default-200 border-highlight-600 hover:bg-highlight-200 hover:text-default-700 hover:border-highlight-200'
+    case "primary":
+      buttonClass = "bg-highlight-500 text-default-200 border-highlight-500 hover:bg-highlight-200 hover:text-default-700 hover:border-highlight-200"
       break
-    case 'outline':
-      buttonClass = 'border-default-200'
+    case "outline":
+      buttonClass = "border-default-200"
   }
 
   return (
     <button
       type="button"
-      className={['rounded-full border-2 transition-all duration-500 disabled:!bg-gray-500 disabled:border-none disabled:!text-default-100', `storybook-button--${size}`, buttonClass, className].join(
-        ' '
+      className={["rounded-full border-2 transition-all duration-500 disabled:!bg-gray-500 disabled:border-none disabled:!text-default-100", `storybook-button--${size}`, buttonClass, className].join(
+        " "
       )}
       {...props}
     >
       {icon && <span className="button-icon">{icon}</span>}
       {label && label}
+      {children && children}
     </button>
-  );
-};
+  )
+}
