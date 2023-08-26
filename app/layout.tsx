@@ -1,5 +1,6 @@
 import React from "react"
 import "./globals.scss"
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: "Create Next App",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Analytics />
       <body>{children}</body>
     </html>
   )
