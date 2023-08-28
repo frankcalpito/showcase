@@ -1,5 +1,17 @@
 {
-  "private": true,
+  "name": "showcase",
+  "description": "Components to rapidly prototype a new project",
+  "version": "1.0.0",
+  "author": "Franklin Calpito Jr",
+  "license": "MIT",
+  "repository": "fccalpitojr/showcase",
+  "keywords": [
+    "react",
+    "next",
+    "showcase",
+    "snackbar"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

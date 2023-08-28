@@ -1,3 +1,5 @@
+"use client"
+
 import "./fileUpload.scss"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "../Button/Button"

@@ -1,3 +1,5 @@
+"use client"
+
 import styles from "./loader.module.scss";
 
 type LoaderType = 'dots' | 'spinner' | 'bar';

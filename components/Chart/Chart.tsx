@@ -1,3 +1,5 @@
+"use client"
+
 import type { ChartData, ChartOptions, ChartType } from "chart.js"
 // import { Chart } from 'chart.js';
 import ChartJS from "chart.js/auto"
