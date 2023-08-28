@@ -13,6 +13,7 @@ export interface ChartProps {
   labels?: string[];
   options?: ChartOptions<ChartType>;
   maintainAspectRatio?: boolean;
+  scaleTicksColor?: string;
 }
 
 export const Chart = ({
@@ -20,6 +21,7 @@ export const Chart = ({
   maintainAspectRatio = true,
   className = "",
   type = "line",
+  scaleTicksColor = "#999",
   options
 }: ChartProps) => {
   const chartRef = useRef<any>(null)
@@ -37,19 +39,19 @@ export const Chart = ({
             scales: {
               x: {
                 ticks: {
-                  color: "white", // Change x axis label color here
+                  color: scaleTicksColor, // Change x axis label color here
                 },
               },
               y: {
                 ticks: {
-                  color: "white",
+                  color: scaleTicksColor,
                 },
               },
             },
             plugins: {
               legend: {
                 labels: {
-                  color: "white", // Change legend label color here
+                  color: scaleTicksColor, // Change legend label color here
                 },
               },
             },

@@ -1,0 +1,49 @@
+.loader-dots {
+  @apply inline-flex items-center;
+
+  .spacer {
+    @apply mr-1;
+  }
+  
+  span {
+    @apply w-1 h-1 rounded-full inline-block my-0 mx-[1px];
+    animation: blink 1.5s infinite both;
+
+    @for $i from 1 through 5 {
+      $delay: ($i - 1) * 0.3s;
+      $duration: 1.5s + ($i - 1) * 0.3s;
+    
+      &:nth-of-type(#{$i}) {
+        animation: blink $duration infinite both $delay;
+      }
+    }
+  }
+}
+
+.loader-spinner {
+  svg {
+    @apply w-8 h-8 text-default-500 dark:text-default-200 fill-highlight-700 dark:fill-highlight-400;
+    animation: spin 1.5s infinite both;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}

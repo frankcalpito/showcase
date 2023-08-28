@@ -30,7 +30,7 @@ const getChartData = () => ({
   datasets: [...new Array(3)].map((x: any, i: number) => transformToDataset(getData(4), `Dataset ${i + 1}`))
 })
 
-const ChartTemplate = ({ type = "line" }: ChartProps) => {
+const ChartTemplate = ({ type = "line", ...props }: ChartProps) => {
   const [data, setData] = useState<any>()
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,7 +43,7 @@ const ChartTemplate = ({ type = "line" }: ChartProps) => {
   return (
     <div className="block">
       <Button size="small" onClick={() => setData(getChartData())} >Redraw Chart</Button>
-      <Chart className="mt-4" data={getChartData()} type={type} />
+      <Chart className="mt-4" data={getChartData()} type={type} { ...props } />
     </div>
   )
 }
@@ -62,28 +62,28 @@ export const Variations: Story = {
     return (
       <div className="grid sm:grid-cols-3 gap-2">
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate />
+          <ChartTemplate scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="bar" />
+          <ChartTemplate type="bar" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="doughnut" />
+          <ChartTemplate type="doughnut" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="bubble" />
+          <ChartTemplate type="bubble" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="pie" />
+          <ChartTemplate type="pie" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="polarArea" />
+          <ChartTemplate type="polarArea" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="radar" />
+          <ChartTemplate type="radar" scaleTicksColor="#eee" />
         </Card>
         <Card className="p-4 !bg-gray-700" disableEffects>
-          <ChartTemplate type="scatter" />
+          <ChartTemplate type="scatter" scaleTicksColor="#eee" />
         </Card>
       </div>
     )
