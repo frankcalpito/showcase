@@ -1,5 +1,13 @@
 import '../app/globals.scss';
 import type { Preview } from '@storybook/react'
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(process.env.GA_ID || '', {
+  gtagOptions: { 
+    debug_mode: true,
+    content_group: 'storybook'
+  }
+});
 
 const preview: Preview = {
   parameters: {
