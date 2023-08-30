@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "outDir": "./dist", // Output directory for transpiled files
+    "rootDir": "./components", // Source directory for TypeScript and SCSS files
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true, // Generate declaration files (.d.ts)
+    "sourceMap": true, // Generate source maps
+    "jsx": "react", // Adjust if you're using React with TypeScript
+  },
+  "include": ["components/index.ts", "components/**/*.tsx", "components/**/*.scss", "./types/declaration.d.ts"],
+  "exclude": ["node_modules", "components/**/*.cy.tsx", "dist", "components/Page/*.tsx"]
+}
