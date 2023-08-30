@@ -1,8 +1,8 @@
 import React from "react"
 import Image from "next/image"
 import { Inter } from "next/font/google"
-import styles from "./page.module.css"
-import { Input } from "@/components/Input/Input"
+import styles from "./page.module.scss"
+import { Input } from "../components/Input/Input"
 
 const inter = Inter({ subsets: ["latin"] })
 

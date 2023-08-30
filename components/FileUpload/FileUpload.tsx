@@ -1,7 +1,9 @@
 "use client"
 
-import "./fileUpload.scss"
-import { useEffect, useMemo, useRef, useState } from "react"
+import React, { useEffect, useMemo, useRef, useState } from "react"
+
+import styles from "./fileUpload.module.scss"
+
 import { Button } from "../Button/Button"
 
 
@@ -87,7 +89,7 @@ export const FileUpload = function ({
   const isDisabled = useMemo(() => uploadedFiles.length >= maxFileCount, [uploadedFiles, maxFileCount])
 
   return (
-    <div className={["col justify-center items-start file-upload-wrapper", wrapperClass, errorText && "error"].join(" ")}>
+    <div className={[styles["file-upload-wrapper"], "col justify-center items-start", wrapperClass, errorText && "error"].join(" ")}>
       <input data-testid={id} ref={fileUploadRef} id={id} type="file" name={name || id} multiple accept="image/*" className="hidden" onChange={handleFileEvent} {...props} />
       <div className="w-full flex items-center py-3">
         {label && <label>{label}</label>}

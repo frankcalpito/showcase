@@ -1,6 +1,6 @@
 import React from "react"
 import "./globals.scss"
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "Create Next App",

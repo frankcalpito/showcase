@@ -1,3 +1,5 @@
+import React from "react"
+
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta = {
@@ -16,7 +18,7 @@ type Story = StoryObj
 
 export const Default: Story = {
   render: () => (
-    <div className="grid grid-cols-3 gap-4 items-center bg-white w-screen h-screen">
+    <div className="grid grid-cols-3 gap-4 items-center">
       <div className="col">
         <h1 className="text-3xl">Franklin Calpito Jr</h1>
       </div>

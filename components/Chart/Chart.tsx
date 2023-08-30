@@ -1,4 +1,5 @@
 "use client"
+import React from "react";
 
 import type { ChartData, ChartOptions, ChartType } from "chart.js"
 // import { Chart } from 'chart.js';
@@ -7,7 +8,7 @@ import { useEffect, useRef } from "react"
 
 export interface ChartProps {
   label?: string;
-  onClick?: Function;
+  onClick?: any;
   className?: string;
   data?: ChartData;
   type?: ChartType
