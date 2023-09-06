@@ -20,6 +20,9 @@ const preview: Preview = {
     },
     options: {
       showPanel: true,
+      storySort: {
+        order: ['Intro', 'Pages', 'Organisms', 'Molecules', 'Atoms', '*', 'WIP'],
+      },
     },
   }
 }
